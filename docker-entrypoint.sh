@@ -36,6 +36,7 @@ rabbitConfigKeys=(
 	default_vhost
 	hipe_compile
 	cluster_partition_handling
+	cluster_nodes
 )
 fileConfigKeys=(
 	management_ssl_cacertfile
@@ -192,7 +193,17 @@ rabbit_env_config() {
 				[ "$val" ] || continue
 				rawVal='"'"$val"'"'
 				;;
-
+				
+			cluster_partition_handling)
+				[ "$val" ] || continue
+				rawVal='$val'
+				;;
+				
+			cluster_nodes)
+				[ "$val" ] || continue
+				rawVal='$val'
+				;;
+				
 			*)
 				[ "$val" ] || continue
 				rawVal='<<"'"$val"'">>'
