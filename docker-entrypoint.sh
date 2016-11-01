@@ -35,6 +35,7 @@ rabbitConfigKeys=(
 	default_user
 	default_vhost
 	hipe_compile
+	cluster_partition_handling
 )
 fileConfigKeys=(
 	management_ssl_cacertfile
